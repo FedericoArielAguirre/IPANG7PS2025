@@ -1,11 +1,11 @@
 # Introducción a la Programación y Análisis Numérico
 
-Este repositorio contiene materiales y código relacionados con la asignatura de *Introducción a la Programación y Análisis Numérico*. 
+Este repositorio contiene materiales y código relacionados con la asignatura de *Introducción a la Programación y Análisis Numérico* de la Facultad de Ingeniería de la Universidad Nacional de La Plata. 
 
 ## Contenido
 
-- **Carpeta `codigo/`**: Contiene scripts y funciones en **MATLAB** utilizadas para resolver problemas numéricos.
-- **Carpeta `tareas/`**: Incluye documentos en formato **PDF** con los enunciados de las tareas y ejercicios.
+-  Contiene scripts y funciones en **MATLAB** utilizadas para resolver problemas numéricos.
+-  Incluye documentos en formato **PDF** con los enunciados de las tareas y ejercicios.
 
 ## Requisitos
 
@@ -19,12 +19,8 @@ Para ejecutar los códigos en este repositorio, se recomienda:
    ```sh
    git clone https://github.com/usuario/repositorio.git
    ```
-2. Accede a la carpeta `codigo/` y ejecuta los scripts de MATLAB según la tarea que deseas realizar.
-3. Consulta la carpeta `tareas/` para revisar los ejercicios y problemas propuestos.
-
-## Contacto
-
-Si tienes preguntas o comentarios, no dudes en abrir un *issue* o contactar al profesor/coordinador del curso.
+2. Ejecuta los scripts de MATLAB según la tarea que deseas realizar.
+3. Consulta para revisar los ejercicios y problemas propuestos.
 
 ---
 **Autor:** [Federico Aguirre]  
