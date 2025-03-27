@@ -9,7 +9,7 @@ close all
 main()
 function main()
     % Definir el rango de decimales a analizar
-    decimales = 1:7; % Rango de análisis (1 a 7 decimales)
+    decimales = 1:8; % Rango de análisis (1 a 8 decimales)
     
     % Preasignar memoria para resultados
     ops_single = zeros(1, length(decimales));
