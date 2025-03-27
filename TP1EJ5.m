@@ -236,7 +236,7 @@ function main()
     ylabel('Error Relativo (Log)', 'FontSize', 11);
 
     % Toma la traspuesta de decimales, convierte a string
-    % convierte a a arrgelos de celda, establecemos las etiquetas del eje x
+    % convierte a arreglos de celda, establecemos las etiquetas del eje x
     xticklabels(cellstr(num2str(decimales'))); 
     
     
@@ -269,7 +269,7 @@ function main()
     ylabel('Error Relativo % (Log)', 'FontSize', 11);
     
     % Toma la traspuesta de decimales, convierte a string
-    % convierte a a arrgelos de celda, establecemos las etiquetas del eje x
+    % convierte a arreglos de celda, establecemos las etiquetas del eje x
     xticklabels(cellstr(num2str(decimales')));
     
     % agrega una leyenda con los nombres "Simple" y "Doble",
