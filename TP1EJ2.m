@@ -19,17 +19,17 @@ elseif (delta > 0 && pos_inicial > pos_final) || (delta < 0 && pos_inicial < pos
 end
 
 % Variables para análisis de errores
-pos_exacta = pos_inicial; % Inicialmente la posición exacta es igual a la inicial
+pos_exacta    = pos_inicial; % Inicialmente la posición exacta es igual a la inicial
 pos_calculada = pos_barra; % Valor aproximado usando precisión simple
-errores_abs = []; % Error absoluto
-errores_rel = []; % Error relativo
-posiciones = []; % Para registrar la posición actual en cada iteración
+errores_abs   = []; % Error absoluto
+errores_rel   = []; % Error relativo
+posiciones    = []; % Para registrar la posición actual en cada iteración
 
 % Bucle con análisis de errores
 while pos_exacta < pos_final - single(1e-6) % Tolerancia para comparación de flotantes
-    i = i + 1;
+    i          = i + 1;
     pos_exacta = pos_inicial + i * double(delta); % Usamos doble precisión como referencia exacta
-    pos_barra = single(pos_inicial + i * delta); % Calculamos la posición usando precisión simple
+    pos_barra  = single(pos_inicial + i * delta); % Calculamos la posición usando precisión simple
     
     % Error absoluto y relativo
     error_abs = abs(double(pos_barra) - pos_exacta);
@@ -39,10 +39,10 @@ while pos_exacta < pos_final - single(1e-6) % Tolerancia para comparación de fl
     
     errores_abs = [errores_abs, error_abs];
     errores_rel = [errores_rel, error_rel];
-    posiciones = [posiciones, double(pos_barra)];
+    posiciones  = [posiciones, double(pos_barra)];
 
     % Cota del error (debido a precisión de single)
-    cota_error = abs(eps(single(pos_barra)) * double(pos_barra));
+    cota_error  = abs(eps(single(pos_barra)) * double(pos_barra));
     
     % Imprimimos para control
     %fprintf('Iteración %d: Posición Calculada = %.6f, Error Abs = %.6f, Error Rel = %.6f, Cota = %.6f\n', ...
