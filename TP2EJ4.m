@@ -6,7 +6,7 @@ clear
 close all
 
 % Datos de entrada
-dias = [0, 6, 10, 13, 17, 20, 28]; % Días
+dias          = [0, 6, 10, 13, 17, 20, 28]; % Días
 peso_muestra1 = [6.67, 17.33, 42.67, 37.33, 30.10, 29.31, 28.74]; % Peso promedio de la primera muestra
 peso_muestra2 = [6.67, 16.11, 18.89, 15.00, 10.56, 9.44, 8.89]; % Peso promedio de la segunda muestra
 
