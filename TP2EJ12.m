@@ -14,23 +14,19 @@ t = [4, 8, 12, 16, 20, 24];
 c = [1600, 1320, 1000, 890, 650, 560];
 
 % Modelo exponencial: c(t) = c0 * exp(-k*t)
-% Realizaremos un ajuste de mínimos cuadrados no lineal
+% Ajuste por transformación logarítmica y regresión lineal
 
-% Función de ajuste
-modelo = @(param, t) param(1) * exp(-param(2)*t);
+% Transformamos los datos
+log_c = log(c);
 
-% Estimación inicial de parámetros
-param0 = [1600, 0.1];
-
-% Opciones de optimización
-opciones = optimset('Display', 'off');
-
-% Ajuste no lineal usando lsqcurvefit
-[param_ajustados, ~] = lsqcurvefit(modelo, param0, t, c, [], [], opciones);
+% Ajustamos una regresión lineal a log(c) vs t
+A = [ones(length(t), 1), -t']; % Matriz de diseño
+b = log_c';
+param_ajustados = A \ b; % Resolución por mínimos cuadrados
 
 % Parámetros ajustados
-c0 = param_ajustados(1);  % Concentración inicial
-k = param_ajustados(2);   % Constante de decaimiento
+c0 = exp(param_ajustados(1)); % Concentración inicial
+k = param_ajustados(2);       % Constante de decaimiento
 
 % a) Estimación de la concentración al final de la tormenta (t=0)
 conc_inicial = c0;
