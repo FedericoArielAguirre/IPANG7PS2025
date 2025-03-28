@@ -25,7 +25,7 @@ fprintf('a = %.4f\n', a);
 fprintf('b = %.4f\n', b);
 
 % b) Calcular el error cuadrático
-E = sum((R - b * W.^a).^2);
+E = sqrt(sum((R - b * W.^a).^2));
 fprintf('Error cuadrático asociado: E = %.4f\n', E);
 
 % c) Recalcular el ajuste con el término cuadrático
@@ -40,5 +40,5 @@ fprintf('c = %.4f\n', c);
 fprintf('b = %.4f\n', b_quad);
 
 % d) Calcular el error cuadrático asociado al nuevo ajuste
-E_quad = sum((R - b_quad * W.^(a_quad + c * (ln_W.^2))).^2);
+E_quad = sqrt(sum((R - b_quad * W.^(a_quad + c * (ln_W.^2))).^2));
 fprintf('Error cuadrático asociado al nuevo ajuste: E_quad = %.4f\n', E_quad);
