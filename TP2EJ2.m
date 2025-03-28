@@ -12,7 +12,7 @@ vec_y = [1 2 3 4 5 6 7 8];
 
 % Generamos un rango de valores para graficar
 x_eval = linspace(min(vec_x) - 100, max(vec_x) + 100, 1000);
-L = lagrange(vec_x, vec_y, x_eval);
+L      = lagrange(vec_x, vec_y, x_eval);
 
 % Graficamos los polinomios de Lagrange
 figure;
@@ -30,9 +30,9 @@ grid on;
 
 % c) Generar y graficar el polinomio interpolante mediante polyfit y polyval
 % Usamos polyfit para obtener los coeficientes del polinomio
-n_polyfit = length(vec_x) - 1; % Grado del polinomio
+n_polyfit    = length(vec_x) - 1; % Grado del polinomio
 coef_polyfit = polyfit(vec_x, vec_y, n_polyfit);
-y_polyfit = polyval(coef_polyfit, x_eval);
+y_polyfit    = polyval(coef_polyfit, x_eval);
 
 % Graficamos el polinomio de polyfit
 plot(x_eval, y_polyfit, 'g--', 'DisplayName', 'Polinomio de Polyfit');
@@ -60,7 +60,7 @@ grid on;
 
 % Comparación con el polinomio de polyfit para los pesos
 coef_polyfit_pesos = polyfit(meses, pesos, length(meses) - 1);
-y_polyfit_pesos = polyval(coef_polyfit_pesos, x_eval_pesos);
+y_polyfit_pesos    = polyval(coef_polyfit_pesos, x_eval_pesos);
 plot(x_eval_pesos, y_polyfit_pesos, 'g--', 'DisplayName', 'Polinomio de Polyfit (Pesos)');
 legend;
 
