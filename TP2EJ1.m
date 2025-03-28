@@ -5,22 +5,26 @@ clc
 clear
 close all
 
-% a) Construir el polinomio interpolante usando la matriz de Vandermonde
+% a) Construir el polinomio interpolante sin usar vander
 % Definimos los datos
 meses = [1, 2, 3, 4, 6, 7, 9, 12]; % Representación de los meses
 pesos = [95, 95.5, 97.2, 97, 97.6, 98, 101, 103.3]; % Pesos correspondientes
 
-% Construimos la matriz de Vandermonde
-V = vander(meses); % Matriz de Vandermonde
-V = V(:, end:-1:1); % Reordenamos para que el primer columna sea x^n
+% Construimos manualmente la matriz de Vandermonde
+n = length(meses);
+V = zeros(n, n); % Matriz inicializada con ceros
+for i = 1:n
+    for j = 1:n
+        V(i, j) = meses(i)^(j-1);
+    end
+end
 
 % Calculamos los coeficientes del polinomio interpolante
 coeficientes_vandermonde = V \ pesos'; % Resolvemos el sistema V * coef = pesos
 
 % Mostramos los coeficientes
-disp('Coeficientes del polinomio interpolante (Vandermonde):');
+disp('Coeficientes del polinomio interpolante (Matriz construida manualmente):');
 disp(coeficientes_vandermonde);
-
 
 % Llamamos a la función para obtener los coeficientes de Newton
 coeficientes_newton = polinomioNewton(meses, pesos);
@@ -44,6 +48,7 @@ function coeficientes = polinomioNewton(x, y)
     % Los coeficientes del polinomio de Newton son la primera fila de diferencias
     coeficientes = diferencias(1, 1:n);
 end
+
 
 % c) ¿Qué diferencias hay entre ambos polinomios interpolantes?
 % Los polinomios interpolantes de Vandermonde y de Newton son equivalentes
