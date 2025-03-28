@@ -49,8 +49,8 @@ pesos = [95, 95.5, 97.2, 97, 97.6, 98, 101, 103.3]; % Pesos
 x_eval = linspace(min(meses), max(meses), 100);
 
 % Interpolación con pchip
-pp = pchip(meses, pesos); % Crear el polinomio por tramos cúbico
-y_pchip = ppval(pp, x_eval); % Evaluar el polinomio en los puntos x_eval
+pp      = pchip(meses, pesos); % Crear el polinomio por tramos cúbico
+y_pchip = ppval(pp, x_eval);   % Evaluar el polinomio en los puntos x_eval
 
 % Graficar los resultados
 figure;
@@ -64,7 +64,7 @@ plot(x_eval, L_eval_pesos, 'b-', 'DisplayName', 'Polinomio de Lagrange');
 
 % Graficar el polinomio de Polyfit
 coef_polyfit_pesos = polyfit(meses, pesos, length(meses) - 1);
-y_polyfit_pesos = polyval(coef_polyfit_pesos, x_eval);
+y_polyfit_pesos    = polyval(coef_polyfit_pesos, x_eval);
 plot(x_eval, y_polyfit_pesos, 'g--', 'DisplayName', 'Polinomio de Polyfit');
 
 % Configuración de la gráfica
