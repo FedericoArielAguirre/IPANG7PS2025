@@ -197,5 +197,5 @@ end
 % f) Función para calcular el error cuadrático medio
 function ecm = calcular_ecm(coeficientes, x, y)
     y_pred = polyval(coeficientes, x);
-    ecm = mean((y - y_pred).^2);
+    ecm = sqrt(mean((y - y_pred).^2));
 end
