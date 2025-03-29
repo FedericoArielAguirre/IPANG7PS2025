@@ -15,8 +15,13 @@ R = [0.154, 0.23, 0.181, 0.180, 0.234, 0.296, 0.357, 0.260, 0.299, 0.537, ...
      2.23, 2.01, 3.59, 3.58, 3.28, 3.40, 4.15, 4.66, 2.40, 5.10];
 
 % a) Ajuste logarítmico
-ln_R = log(R);
-ln_W = log(W);
+
+% Filtramos valores válidos
+valid_indices = (W > 0) & (R > 0); % Índices válidos
+W_valid       = W(valid_indices);  % Volúmenes válidos
+R_valid       = R(valid_indices);  % Alturas válidas
+ln_R = log(R_valid);
+ln_W = log(W_valid);
 p    = polyfit(ln_W, ln_R, 1);
 a    = p(1);
 b    = exp(p(2));
@@ -25,7 +30,7 @@ fprintf('a = %.4f\n', a);
 fprintf('b = %.4f\n', b);
 
 % b) Calcular el error cuadrático
-E = sqrt(mean(sum((R - b * W.^a).^2)));
+E = sum((R - b * W.^a).^2);
 fprintf('Error cuadrático asociado: E = %.4f\n', E);
 
 % c) Recalcular el ajuste con el término cuadrático
@@ -36,9 +41,10 @@ c      = p_quad(2);
 b_quad = exp(p_quad(1));
 fprintf('Ajuste cuadrático:\n');
 fprintf('a = %.4f\n', a_quad);
-fprintf('c = %.4f\n', c);
 fprintf('b = %.4f\n', b_quad);
+fprintf('c = %.4f\n', c);
+
 
 % d) Calcular el error cuadrático asociado al nuevo ajuste
-E_quad = sqrt(mean(sum((R - b_quad * W.^(a_quad + c * (ln_W.^2))).^2)));
+E_quad = sum((R - b_quad * W.^(a_quad + c * (ln_W.^2))).^2);
 fprintf('Error cuadrático asociado al nuevo ajuste: E_quad = %.4f\n', E_quad);
