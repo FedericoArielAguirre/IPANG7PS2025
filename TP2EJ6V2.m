@@ -58,7 +58,7 @@ plot(x1_denso, y1_poly, 'r-', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva 
 plot(x2_denso, y2_poly, 'g-', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva 2');
 plot(x3_denso, y3_poly, 'b-', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva 3');
 
-legend('show');
+legend('Location', 'southwest', 'FontSize', 10);
 
 % b) Interpolación con Splines Cúbicos con condiciones de derivada
 figure;
@@ -100,7 +100,7 @@ plot(x1_denso, y1_spline, 'r-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 1
 plot(x2_denso, y2_spline, 'g-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 2');
 plot(x3_denso, y3_spline, 'b-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 3');
 
-legend('show');
+legend('Location', 'southwest', 'FontSize', 10);
 
 % c) Comparación de interpolación polinómica vs splines cúbicos
 figure;
@@ -115,7 +115,7 @@ plot(x1_denso, y1_poly, 'r-', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva 
 plot(x2_denso, y2_poly, 'g-', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva 2');
 plot(x3_denso, y3_poly, 'b-', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva 3');
 plot([x1, x2, x3], [y1, y2, y3], 'ko', 'MarkerSize', 6, 'DisplayName', 'Puntos de Datos');
-legend('show');
+legend('Location', 'southwest', 'FontSize', 10);
 
 subplot(2,1,2);
 hold on;
@@ -127,7 +127,7 @@ plot(x1_denso, y1_spline, 'r-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 1
 plot(x2_denso, y2_spline, 'g-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 2');
 plot(x3_denso, y3_spline, 'b-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 3');
 plot([x1, x2, x3], [y1, y2, y3], 'ko', 'MarkerSize', 6, 'DisplayName', 'Puntos de Datos');
-legend('show');
+legend('Location', 'southwest', 'FontSize', 10);
 
 % d) Mostrar el gráfico final
 figure;
@@ -142,4 +142,4 @@ plot(x3_denso, y3_poly, 'b--', 'LineWidth', 1.5, 'DisplayName', 'Polinomio Curva
 plot(x1_denso, y1_spline, 'r-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 1');
 plot(x2_denso, y2_spline, 'g-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 2');
 plot(x3_denso, y3_spline, 'b-', 'LineWidth', 1.5, 'DisplayName', 'Spline Curva 3');
-legend('show');
+legend('Location', 'southwest', 'FontSize', 10);
