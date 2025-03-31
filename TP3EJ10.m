@@ -35,16 +35,17 @@ exact6 = 1/2*log(abs((1.6^2-4)/(1^2-4)));
 exact7 = log(abs((3.5+sqrt(3.5^2-4))/(3+sqrt(3^2-4))));
 exact8 = pi/8;
 
+% Vector de valores exactos
 exactValues = [exact1, exact2, exact3, exact4, exact5, exact6, exact7, exact8];
 
 % Arreglos para funciones y límites
-funcs = {f1, f2, f3, f4, f5, f6, f7, f8};
+funcs    = {f1, f2, f3, f4, f5, f6, f7, f8};
 a_limits = [a1, a2, a3, a4, a5, a6, a7, a8];
 b_limits = [b1, b2, b3, b4, b5, b6, b7, b8];
 
 % Inicializar arrays para almacenar resultados
 results = zeros(4, 8);  % Para n = 2, 3, 4, 5 y 8 integrales
-errors = zeros(4, 8);   % Para errores relativos
+errors  = zeros(4, 8);  % Para errores relativos
 
 % Calcular las integrales utilizando cuadratura gaussiana para n = 2, 3, 4, 5
 for idx = 1:8
@@ -72,12 +73,12 @@ for idx = 1:8
         end
         
         % Transformar nodos del intervalo [-1,1] al intervalo [a,b]
-        a = a_limits(idx);
-        b = b_limits(idx);
+        a             = a_limits(idx);
+        b             = b_limits(idx);
         x_transformed = ((b-a)/2)*x + (a+b)/2;
         
         % Evaluar la función en los nodos transformados
-        func = funcs{idx};
+        func     = funcs{idx};
         f_values = func(x_transformed);
         
         % Calcular la integral usando la fórmula de cuadratura
@@ -119,9 +120,9 @@ sgtitle('Convergencia de Cuadratura Gaussiana');
 fprintf('\nComparación con integral de MATLAB:\n');
 fprintf('-----------------------------------------------------------------------\n');
 for i = 1:8
-    func = funcs{i};
+    func          = funcs{i};
     matlab_result = integral(func, a_limits(i), b_limits(i));
-    matlab_error = abs((matlab_result - exactValues(i)) / exactValues(i)) * 100;
+    matlab_error  = abs((matlab_result - exactValues(i)) / exactValues(i)) * 100;
     fprintf('Integral %d: MATLAB = %.10f (Error: %.8f%%)\n', i, matlab_result, matlab_error);
 end
 fprintf('-----------------------------------------------------------------------\n');
