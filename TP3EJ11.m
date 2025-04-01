@@ -32,7 +32,7 @@ dt       = t_values(2) - t_values(1); % Tamaño del paso
 % Calcular la velocidad en cada punto de tiempo
 v_values = (g * m / c_d) * tanh((g * c_d / m) * t_values);
 
-% Método del trapecio para la integración numérica
-s_numeric = trapz(t_values, v_values); % Integrar usando el método del trapecio
+% Método del rectángulo para la integración numérica
+s_numeric = sum(v_values(1:end-1) * dt); % Integrar usando el método de rectángulos
 
 fprintf('b) Distancia caída después de 10 segundos (numérica): %.4f m\n', s_numeric);
