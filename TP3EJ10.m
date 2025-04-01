@@ -25,15 +25,17 @@ a6 = 1;    b6 = 1.6;    % Para f6
 a7 = 3;    b7 = 3.5;    % Para f7
 a8 = 0;    b8 = pi/4;   % Para f8
 
-% Valores exactos (calculados analíticamente o con alta precisión)
-exact1 = 1/3*(1.5^3*log(1.5) - 1^3*log(1)) - 1/9*(1.5^3 - 1^3);
-exact2 = 2 - 5*exp(-1);
-exact3 = 1/4*log(abs((0.35^2-4)/(0^2-4)));
-exact4 = 1/4*pi^2/16 - sin(pi/4) + pi/4*cos(pi/4);
-exact5 = (2/13*exp(3*pi/4)*sin(2*pi/4)) - (3/13*exp(3*pi/4)*cos(2*pi/4)) - (2/13*sin(0)) + (3/13*cos(0));
-exact6 = 1/2*log(abs((1.6^2-4)/(1^2-4)));
-exact7 = log(abs((3.5+sqrt(3.5^2-4))/(3+sqrt(3^2-4))));
-exact8 = pi/8;
+e = exp(1); %valor de exp 
+
+% Valores exactos (calculados analíticamente)
+exact1 = ((9*log(3/2))/8)-(19/72);
+exact2 = (-5/e)+2;
+exact3 = 1/2*log(33/47);
+exact4 = (-(pi^2*sqrt(2))/32)+((pi*sqrt(2))/(4))+sqrt(2)-2;
+exact5 = (3*e^((3*pi)/4)+2)/(13);
+exact6 = log(12/25);
+exact7 = (sqrt(33)/2)-sqrt(5);
+exact8 = (2+pi)/8;
 
 % Vector de valores exactos
 exactValues = [exact1, exact2, exact3, exact4, exact5, exact6, exact7, exact8];
