@@ -15,7 +15,7 @@ h_inicial = 45000;  % en m
 v_inicial = -5000;  % en m/s (negativo porque y positivo es hacia arriba)
 
 % Preasignación de memoria para las variables
-% Estimamos el número máximo de iteraciones (conservador)
+% Estimamos el número máximo de iteraciones
 max_iter    = 100000;
 h           = zeros(1, max_iter);
 velocidad   = zeros(1, max_iter);
