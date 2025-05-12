@@ -60,11 +60,11 @@ hold off;
 % b)
 % Datos de esfuerzo-tensión
 epsilon = [153, 198, 270, 320, 355, 410, 460, 512, 562, 614, 664, 716, 766] * 1e-3; % Convertir a m/m
-sigma = [87.8, 96.6, 176, 263, 350, 569, 830, 1227, 1623, 2105, 2677, 3378, 4257] * 1e3; % Convertir a N/m²
+sigma  = [87.8, 96.6, 176, 263, 350, 569, 830, 1227, 1623, 2105, 2677, 3378, 4257] * 1e3; % Convertir a N/m²
 
 % Seleccionar un punto medio (puede ser el punto central de los datos)
-mid_index = round(length(sigma) / 2);
-sigma_bar = sigma(mid_index);
+mid_index   = round(length(sigma) / 2);
+sigma_bar   = sigma(mid_index);
 epsilon_bar = epsilon(mid_index);
 
 % Calcular E0/a

@@ -1,9 +1,7 @@
 % Ejercicio 14-TP3
 
 % Borramos las variables previas y la ventana de comandos
-clc
-clear
-close all
+clc; clear; close all
 
 % Datos de flujo y tiempo
 flujo   = [15, 14, 12, 11, 9, 8, 5, 2.5, 2, 1]; % Flujo en mg/cm²/h
@@ -24,4 +22,4 @@ end
 Q_total = Q_integral * A; % mg
 
 % Mostrar resultados
-fprintf('La cantidad total de insulina distribuida en 24 horas es: %.4f mg\n', Q_total);
+fprintf('La cantidad total de insulina distribuida en 24 horas es: %.1f mg\n', Q_total);
