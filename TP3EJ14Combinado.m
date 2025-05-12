@@ -100,8 +100,8 @@ function mostrarResultados(Q_total_trapecio, Q_total_simpson, Q_total_gauss)
     % Mostrar resultados de los métodos
     fprintf('La cantidad total de insulina distribuida en 24 horas usando diferentes métodos:\n');
     fprintf('  - Método del Trapecio: %.1f mg\n', Q_total_trapecio);
-    fprintf('  - Método de Simpson: %.1f mg\n', Q_total_simpson);
-    fprintf('  - Método de Gauss: %.1f mg\n', Q_total_gauss);
+    fprintf('  - Método de Simpson: %.1f mg\n',   Q_total_simpson);
+    fprintf('  - Método de Gauss: %.1f mg\n',     Q_total_gauss);
 end
 function graficarDatosOriginales(tiempo, flujo, x_fino, y_fino)
     % Gráfico de los datos y área bajo la curva
@@ -129,8 +129,8 @@ function graficarComparacionMetodos(Q_total_trapecio, Q_total_simpson, Q_total_g
     ylabel('Cantidad Total de Insulina (mg)', 'FontSize', 12); 
     % Añadir valores numéricos sobre las barras
     text(1, Q_total_trapecio + 1, sprintf('%.1f mg', Q_total_trapecio), 'HorizontalAlignment', 'center');
-    text(2, Q_total_simpson + 1, sprintf('%.1f mg', Q_total_simpson), 'HorizontalAlignment', 'center');
-    text(3, Q_total_gauss + 1, sprintf('%.1f mg', Q_total_gauss), 'HorizontalAlignment', 'center');
+    text(2, Q_total_simpson + 1, sprintf('%.1f mg',  Q_total_simpson),  'HorizontalAlignment', 'center');
+    text(3, Q_total_gauss + 1, sprintf('%.1f mg',    Q_total_gauss),    'HorizontalAlignment', 'center');
 end
 function graficarVisualizacionMetodos(tiempo, flujo, x_fino, y_fino)
     % Visualización adicional: Ilustración de cada método
